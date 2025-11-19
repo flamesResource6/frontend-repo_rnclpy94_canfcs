@@ -1,71 +1,93 @@
+import Navbar from './components/Navbar'
+import Hero from './components/Hero'
+import SectionGrid from './components/SectionGrid'
+import Contact from './components/Contact'
+
+const placeholder = (color) => `https://picsum.photos/seed/${color}/1200/800`
+
 function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-      {/* Subtle pattern overlay */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.05),transparent_50%)]"></div>
+    <div className="min-h-screen bg-slate-950">
+      <Navbar />
+      <Hero />
 
-      <div className="relative min-h-screen flex items-center justify-center p-8">
-        <div className="max-w-2xl w-full">
-          {/* Header with Flames icon */}
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center justify-center mb-6">
-              <img
-                src="/flame-icon.svg"
-                alt="Flames"
-                className="w-24 h-24 drop-shadow-[0_0_25px_rgba(59,130,246,0.5)]"
-              />
-            </div>
+      <main className="relative">
+        <SectionGrid
+          id="videos"
+          title="Videos"
+          subtitle="Narrative and commercial stories captured with cinematic intent."
+          items={[
+            { title: 'Neon City Night Drive', tag: 'Short Film', thumb: placeholder('neon') },
+            { title: 'Studio Session', tag: 'Music Video', thumb: placeholder('studio') },
+            { title: 'Outdoor Campaign', tag: 'Ad', thumb: placeholder('outdoor') },
+            { title: 'Portrait Series', tag: 'Editorial', thumb: placeholder('portrait') },
+            { title: 'Runway Cut', tag: 'Fashion', thumb: placeholder('runway') },
+            { title: 'Sunset Sequence', tag: 'Travel', thumb: placeholder('sunset') },
+          ]}
+        />
 
-            <h1 className="text-5xl font-bold text-white mb-4 tracking-tight">
-              Flames Blue
-            </h1>
+        <SectionGrid
+          id="animations"
+          title="Animations"
+          subtitle="Playful motion design and character-driven sequences."
+          items={[
+            { title: 'Orbiting Shapes', tag: '2D Motion', thumb: placeholder('orbit') },
+            { title: 'Logo Morph', tag: 'Brand Motion', thumb: placeholder('logo') },
+            { title: 'Explainer Loop', tag: 'Explainer', thumb: placeholder('loop') },
+            { title: 'Liquid Transition', tag: 'FX', thumb: placeholder('liquid') },
+            { title: 'Character Walk', tag: 'Character', thumb: placeholder('walk') },
+            { title: 'HUD Interface', tag: 'UI Motion', thumb: placeholder('hud') },
+          ]}
+        />
 
-            <p className="text-xl text-blue-200 mb-6">
-              Build applications through conversation
-            </p>
-          </div>
+        <SectionGrid
+          id="graphic-design"
+          title="Graphic Design"
+          subtitle="Bold posters, layouts, and visual identities."
+          items={[
+            { title: 'Festival Poster', tag: 'Poster', thumb: placeholder('poster') },
+            { title: 'Minimal Layout', tag: 'Editorial', thumb: placeholder('layout') },
+            { title: 'Color Systems', tag: 'Style Guide', thumb: placeholder('color') },
+            { title: 'Typeface Study', tag: 'Typography', thumb: placeholder('type') },
+            { title: 'Grid Play', tag: 'Grid', thumb: placeholder('grid') },
+            { title: 'Texture Pack', tag: 'Assets', thumb: placeholder('texture') },
+          ]}
+        />
 
-          {/* Instructions */}
-          <div className="bg-slate-800/50 backdrop-blur-sm border border-blue-500/20 rounded-2xl p-8 shadow-xl mb-6">
-            <div className="flex items-start gap-4 mb-6">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                1
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Describe your idea</h3>
-                <p className="text-blue-200/80 text-sm">Use the chat panel on the left to tell the AI what you want to build</p>
-              </div>
-            </div>
+        <SectionGrid
+          id="commercials"
+          title="Commercials"
+          subtitle="Product launches and brand moments that convert."
+          items={[
+            { title: 'Launch Spot', tag: 'TV', thumb: placeholder('tv') },
+            { title: 'Product Teaser', tag: 'Social', thumb: placeholder('teaser') },
+            { title: 'Holiday Edit', tag: 'Campaign', thumb: placeholder('holiday') },
+            { title: 'On-Location', tag: 'BTS', thumb: placeholder('bts') },
+            { title: 'Retail Screen', tag: 'OOH', thumb: placeholder('ooh') },
+            { title: 'Web Sequence', tag: 'Web', thumb: placeholder('web') },
+          ]}
+        />
 
-            <div className="flex items-start gap-4 mb-6">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                2
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Watch it build</h3>
-                <p className="text-blue-200/80 text-sm">Your app will appear in this preview as the AI generates the code</p>
-              </div>
-            </div>
+        <SectionGrid
+          id="branding"
+          title="Branding"
+          subtitle="Visual identities and systems for modern companies."
+          items={[
+            { title: 'Orb Labs', tag: 'Identity', thumb: placeholder('orb') },
+            { title: 'Café Koko', tag: 'Packaging', thumb: placeholder('cafe') },
+            { title: 'Atlas Run', tag: 'Rebrand', thumb: placeholder('atlas') },
+            { title: 'Moss & Co', tag: 'Logo', thumb: placeholder('moss') },
+            { title: 'Vista UI', tag: 'Design System', thumb: placeholder('vista') },
+            { title: 'Peak Wear', tag: 'Apparel', thumb: placeholder('peak') },
+          ]}
+        />
 
-            <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                3
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Refine and iterate</h3>
-                <p className="text-blue-200/80 text-sm">Continue the conversation to add features and make changes</p>
-              </div>
-            </div>
-          </div>
+        <Contact />
 
-          {/* Footer */}
-          <div className="text-center">
-            <p className="text-sm text-blue-300/60">
-              No coding required • Just describe what you want
-            </p>
-          </div>
-        </div>
-      </div>
+        <footer className="py-10 text-center text-white/50">
+          © {new Date().getFullYear()} Creator Lab. All rights reserved.
+        </footer>
+      </main>
     </div>
   )
 }
